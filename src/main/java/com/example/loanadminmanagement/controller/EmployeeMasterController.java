@@ -4,10 +4,7 @@ import com.example.loanadminmanagement.models.Employee;
 import com.example.loanadminmanagement.services.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/employee")
 @RestController
@@ -25,4 +22,15 @@ public class EmployeeMasterController {
         employeeService.addEmployee(employee);
 
     }
+
+    @PostMapping(value="/deleteEmployee/{employeeId}")
+    public void addEmployee(@PathVariable("employeeId") Long employeeId) {
+
+        //System.out.println("Creating emplyee.....");
+
+        employeeService.deleteEmployee(employeeId);
+
+    }
+
+
 }

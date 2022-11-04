@@ -28,5 +28,10 @@ public class EmployeeService {
 
         employeeRepository.save(employeeMaster);
     }
+
+    public void deleteEmployee(Long employeeId){
+        employeeRepository.deleteById(employeeId);
+    }
+
 }
 
