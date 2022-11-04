@@ -1,8 +1,17 @@
 package com.example.loanadminmanagement.entity;
 
+import lombok.Getter;
+import lombok.Setter;
+
 import javax.persistence.*;
 import java.util.Date;
 
+
+
+@Entity
+@Getter
+@Setter
+@Table(name = "employee_issue_details")
 public class EmployeeIssueDetails {
 
     @Id

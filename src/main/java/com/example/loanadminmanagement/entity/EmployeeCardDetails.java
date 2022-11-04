@@ -19,7 +19,7 @@ public class EmployeeCardDetails {
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "employeeId")
+    @JoinColumn(name = "employee_id")
     private EmployeeMaster employeeMaster;
 
     @ManyToOne

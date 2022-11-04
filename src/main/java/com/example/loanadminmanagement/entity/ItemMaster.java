@@ -20,8 +20,8 @@ public class ItemMaster {
     @Column(name = "item_description")
     private String itemDescription;
 
-    @Column(name = "item_status")
-    private Character itemStatus;
+    @Column(name = "issue_status")
+    private String issueStatus;
 
     @Column(name = "item_category")
     private String itemCategory;

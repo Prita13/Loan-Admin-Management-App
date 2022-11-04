@@ -12,7 +12,6 @@ import java.util.Date;
 @Table(name="employee_master")
 public class EmployeeMaster {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="employee_id")
     private Long employeeId;
 
@@ -25,14 +24,43 @@ public class EmployeeMaster {
     @Column(name = "department")
     private String department;
 
+    public void setEmployeeId(Long employeeId) {
+        this.employeeId = employeeId;
+    }
+
+    public void setEmployeeName(String employeeName) {
+        this.employeeName = employeeName;
+    }
+
+    public void setDesignation(String designation) {
+        this.designation = designation;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public void setDateOfBirth(Date dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public void setDateOfJoining(Date dateOfJoining) {
+        this.dateOfJoining = dateOfJoining;
+    }
+
     @Column(name ="gender")
-    private Character gender;
+    private String gender;
 
     @Column(name = "date_of_birth")
     private Date dateOfBirth;
 
     @Column(name = "date_of_joining")
     private Date dateOfJoining;
+
 
 
 }

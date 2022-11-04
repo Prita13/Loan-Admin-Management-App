@@ -13,11 +13,39 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Employee {
-    String employeeId;
+    Long employeeId;
     String employeeName;
     String designation;
     String department;
-    Character gender;
+    String gender;
     Date dateOfBirth;
     Date dateOfJoining;
+
+    public Long getEmployeeId() {
+        return employeeId;
+    }
+
+    public String getEmployeeName() {
+        return employeeName;
+    }
+
+    public String getDesignation() {
+        return designation;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public Date getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public Date getDateOfJoining() {
+        return dateOfJoining;
+    }
 }
