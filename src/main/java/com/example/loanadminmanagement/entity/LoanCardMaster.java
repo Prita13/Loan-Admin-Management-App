@@ -15,9 +15,20 @@ import java.util.Date;
 public class LoanCardMaster {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name="loan_id")
-    private String LoanId;
+    private String loanId;
+
+    public void setLoanId(String loanId) {
+        this.loanId = loanId;
+    }
+
+    public void setLoanType(String loanType) {
+        this.loanType = loanType;
+    }
+
+    public void setDurationInYears(Integer durationInYears) {
+        this.durationInYears = durationInYears;
+    }
 
     @Column(name=  "loan_type")
     private String loanType;

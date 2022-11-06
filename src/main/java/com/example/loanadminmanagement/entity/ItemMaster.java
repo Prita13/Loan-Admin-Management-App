@@ -13,15 +13,39 @@ import javax.persistence.*;
 public class ItemMaster {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+
     @Column(name="item_id")
-    private Long itemId;
+    private String itemId;
 
     @Column(name = "item_description")
     private String itemDescription;
 
     @Column(name = "issue_status")
     private String issueStatus;
+
+    public void setItemId(String itemId) {
+        this.itemId = itemId;
+    }
+
+    public void setItemDescription(String itemDescription) {
+        this.itemDescription = itemDescription;
+    }
+
+    public void setIssueStatus(String issueStatus) {
+        this.issueStatus = issueStatus;
+    }
+
+    public void setItemCategory(String itemCategory) {
+        this.itemCategory = itemCategory;
+    }
+
+    public void setItemMake(String itemMake) {
+        this.itemMake = itemMake;
+    }
+
+    public void setItemValuation(Integer itemValuation) {
+        this.itemValuation = itemValuation;
+    }
 
     @Column(name = "item_category")
     private String itemCategory;

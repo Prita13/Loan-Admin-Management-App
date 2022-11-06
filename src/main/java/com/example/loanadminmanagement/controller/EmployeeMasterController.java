@@ -17,17 +17,16 @@ public class EmployeeMasterController {
     @PostMapping(value="/addEmployee", produces= MediaType.APPLICATION_JSON_VALUE, consumes=MediaType.APPLICATION_JSON_VALUE)
     public void addEmployee(@RequestBody Employee employee) {
 
-        //System.out.println("Creating emplyee.....");
+        //System.out.println("Creating employee.....");
 
         employeeService.addEmployee(employee);
 
     }
 
     @PostMapping(value="/deleteEmployee/{employeeId}")
-    public void addEmployee(@PathVariable("employeeId") Long employeeId) {
+    public void deleteEmployee(@PathVariable("employeeId") Long employeeId) {
 
         //System.out.println("Creating emplyee.....");
-
         employeeService.deleteEmployee(employeeId);
 
     }
