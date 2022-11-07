@@ -24,6 +24,34 @@ public class EmployeeMaster {
     @Column(name = "department")
     private String department;
 
+    public Long getEmployeeId() {
+        return employeeId;
+    }
+
+    public String getEmployeeName() {
+        return employeeName;
+    }
+
+    public String getDesignation() {
+        return designation;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public Date getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public Date getDateOfJoining() {
+        return dateOfJoining;
+    }
+
     public void setEmployeeId(Long employeeId) {
         this.employeeId = employeeId;
     }
