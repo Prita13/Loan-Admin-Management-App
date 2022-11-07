@@ -26,6 +26,18 @@ public class LoanCardController {
 
         try {
             loanCardService.addLoanCard(loanCard);
+            return new ResponseEntity<LoanCard>(loanCard,null,201);
+        }
+        catch(Exception e) {
+            return new ResponseEntity<String>("Invalid LoanCard details", null, 400);
+        }
+
+    }
+
+    @GetMapping(value="/getAllLoanCards", produces= MediaType.APPLICATION_JSON_VALUE)
+    ResponseEntity<?> getAllLoanCards() {
+
+        try {
             List<LoanCardMaster> loanCardList = loanCardService.getAllLoanCards();
             return new ResponseEntity<List<LoanCardMaster>>(loanCardList,null,201);
         }
@@ -41,7 +53,7 @@ public class LoanCardController {
 
 
         try {
-            loanCardService.addLoanCard(loanCard);
+            loanCardService.editLoanCard(loanCard);
             List<LoanCardMaster> loanCardList = loanCardService.getAllLoanCards();
             return new ResponseEntity<List<LoanCardMaster>>(loanCardList,null,201);
         }

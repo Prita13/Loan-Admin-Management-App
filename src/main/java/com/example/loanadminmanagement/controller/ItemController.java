@@ -39,6 +39,19 @@ public class ItemController {
 
         try{
             itemService.editItem(item);
+            return new ResponseEntity<Item>(item, null, 201);
+        }
+        catch(Exception e) {
+            return new ResponseEntity<String>("Invalid item details", null, 400);
+        }
+
+    }
+
+
+    @GetMapping(value="/getAllItems", produces= MediaType.APPLICATION_JSON_VALUE)
+    ResponseEntity<?> getAllItems() {
+
+        try{
             List<ItemMaster> listItem = itemService.getAllItems();
             return new ResponseEntity<List<ItemMaster>>(listItem, null, 201);
         }

@@ -21,11 +21,21 @@ public class EmployeeMasterController {
     @PostMapping(value="/addEmployee", produces= MediaType.APPLICATION_JSON_VALUE, consumes=MediaType.APPLICATION_JSON_VALUE)
     ResponseEntity<?> addEmployee(@RequestBody Employee employee) {
 
-
-
         try{
 
             employeeService.addEmployee(employee);
+            return new ResponseEntity<Employee>(employee, null, 201);
+        }
+        catch(Exception e) {
+            return new ResponseEntity<String>("Invalid Employee details", null, 400);
+        }
+
+    }
+
+    @GetMapping(value="/getAllEmployees", produces= MediaType.APPLICATION_JSON_VALUE)
+    ResponseEntity<?> getAllEmployees() {
+
+        try{
             List<EmployeeMaster> listEmployee = employeeService.getAllEmployees();
             return new ResponseEntity<List<EmployeeMaster>>(listEmployee, null, 201);
         }
@@ -37,8 +47,6 @@ public class EmployeeMasterController {
 
     @PostMapping(value="/editEmployee", produces= MediaType.APPLICATION_JSON_VALUE, consumes=MediaType.APPLICATION_JSON_VALUE)
     ResponseEntity<?> editEmployee(@RequestBody Employee employee) {
-
-
 
         try{
             employeeService.editEmployee(employee);
@@ -53,7 +61,7 @@ public class EmployeeMasterController {
 
     @PostMapping(value="/deleteEmployee/{employeeId}")
     public void deleteEmployee(@PathVariable("employeeId") Long employeeId) {
-        
+
         employeeService.deleteEmployee(employeeId);
 
     }
