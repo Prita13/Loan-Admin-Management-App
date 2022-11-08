@@ -15,13 +15,13 @@ const AdminDashboard = () => {
         <div id="page-heading">Admin Dash Board</div>
       </div>
       <div className="options">
-        <NavLink to='/CustomerDataManagement'>
+        <NavLink to='/CustomerDataManagement' style={{textDecoration:'none'}}>
           <div className="option-1">Customer Data Management</div>
         </NavLink>
-        <NavLink to='/LoanCardManagement'>
+        <NavLink to='/LoanCardManagement' style={{textDecoration:'none'}}>
           <div className="option-2">Loan Card Management</div>
         </NavLink>
-        <NavLink to='/ItemsMasterData'>
+        <NavLink to='/ItemsMasterData' style={{textDecoration:'none'}}>
           <div className="option-3">Items Master Data</div>
         </NavLink>
       </div>

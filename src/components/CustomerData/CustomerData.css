@@ -1,0 +1,32 @@
+.customer-data-page{
+    display: flex;
+    justify-content:center ;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 60px;
+}
+
+#customer-page-subheading{
+    text-align: center;
+    font-size: 25px;
+}
+
+#customer-details-heading{
+    text-align: center;
+    font-size: 20px;
+    padding: 20px;
+}
+
+.customer-data-table{
+    width: 800px;
+    height: 200px;
+    
+}
+
+
+
+
+
+
+
+
