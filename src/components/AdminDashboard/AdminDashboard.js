@@ -3,26 +3,25 @@ import CustomerData from "../CustomerData/CustomerData";
 import ItemMasterManagement from "../ItemMasterManagement/ItemMasterManagement";
 import LoanCardDetails from "../LoanCardDetails/LoanCardDetails";
 import { NavLink, Routes, Route } from "react-router-dom";
-import "../AdminDashboard/AdminDashboard.css";
 
 const AdminDashboard = () => {
   return (
     <div>
       <div>
-        <NavLink to='/' style={{textDecoration:'none'}}>
-          <div id="main-heading">Loan Management Application</div>
+        <NavLink to='/' activeStyle={{ color: "black" }}>
+          <h4>Loan Management Application</h4>
         </NavLink>
-        <div id="page-heading">Admin Dash Board</div>
+        <h4>Admin Dash Board</h4>
       </div>
-      <div className="options">
-        <NavLink to='/CustomerDataManagement' style={{textDecoration:'none'}}>
-          <div className="option-1">Customer Data Management</div>
+      <div>
+        <NavLink to='/CustomerDataManagement'>
+          <div>Customer Data Management</div>
         </NavLink>
-        <NavLink to='/LoanCardManagement' style={{textDecoration:'none'}}>
-          <div className="option-2">Loan Card Management</div>
+        <NavLink to='/LoanCardManagement'>
+          <div>Loan Card Management</div>
         </NavLink>
-        <NavLink to='/ItemsMasterData' style={{textDecoration:'none'}}>
-          <div className="option-3">Items Master Data</div>
+        <NavLink to='/ItemsMasterData'>
+          <div>Items Master Data</div>
         </NavLink>
       </div>
       <div>

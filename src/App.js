@@ -14,7 +14,7 @@ function App() {
         </div>
       ) : (
         <Router>
-          <div className='dashboard-page'>
+          <div className='page'>
             <AdminDashboard />
           </div>
         </Router>

@@ -1,14 +1,9 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 
 const LoanCardDetails = () => {
-  const [loanType,setLoantype]=useState('');
-  const [duration,setDuration]=useState('');
-  const [loanid,setLoanid]=useState('');
-
-  const LoanDetailHandler=()=>{
-    // request stuff
-  }
-
+  const [loanID, setLoanID] = useState("");
+  const [loanType, setLoanType] = useState("");
+  
   return (
     <div>
       <div>
@@ -19,34 +14,21 @@ const LoanCardDetails = () => {
             <div>
               <label>
                 Loan Id
-                <input type='text' placeholder='Loan ID' value={loanid} onChange={(event)=>setLoanid(event.target.value)} />
+                <input type='text' value={loanID} name='loanid' onChange={(event)=>setLoanID(event.target.value)} />
               </label>
             </div>
             <div>
-              <label>
-                Loan type
-                <select value={loanType} onChange={(event)=>setLoantype(event.target.value)}>
-                  <option value='Furniture'>Furniture</option>
-                  <option value='Car'>Car</option>
-                  <option value='Home'>Home</option>
-                </select>
-              </label>
+            <h5>Designation</h5>
+            <select value={loanType} onChange={(event)=>setLoanType(event.target.value)}>
+              <option value="" selected disabled hidden>Select Loan Type</option>
+              <option value='Furniture'>Furniture</option>
+              <option value='Stationery'>
+                Stationery
+              </option>
+              <option value='Crockery'>Crockery</option>
+            </select>
             </div>
-            <div>
-              <label>
-                Duration
-                <select value={duration} onChange={(event)=>setDuration(event.target.value)}>
-                  <option value='1'>1</option>
-                  <option value='2'>2</option>
-                  <option value='3'>3</option>
-                  <option value='5'>5</option>
-                  <option value='7'>7</option>
-                  <option value='10'>10</option>
-                  <option value='15'>15</option>
-                </select>
-              </label>
-            </div>
-            <button type='submit' onClick={LoanDetailHandler}>Add Data</button>
+            <button type='submit'>Add Data</button>
           </form>
         </div>
       </div>
