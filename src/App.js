@@ -1,12 +1,25 @@
-import React from 'react';
-import LoginForm from './components/loginform';
-
+import React, { useState } from "react";
+import LoginForm from "./components/loginform";
+import CustomerData from "./components/CustomerData/CustomerData";
+import AdminDashboard from "./components/AdminDashboard/AdminDashboard";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   return (
-    <div className="page">
-        <LoginForm />
-    </div>
+    <>
+      {!isLoggedIn ? (
+        <div className='page'>
+          <LoginForm setIsLoggedIn={setIsLoggedIn} />
+        </div>
+      ) : (
+        <Router>
+          <div className='page'>
+            <AdminDashboard />
+          </div>
+        </Router>
+      )}
+    </>
   );
 }
 
