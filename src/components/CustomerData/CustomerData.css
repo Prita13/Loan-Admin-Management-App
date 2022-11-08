@@ -20,8 +20,40 @@
 .customer-data-table{
     width: 800px;
     height: 200px;
-    
 }
+
+.customer-add-btn{
+    width: 200px;
+    align-items: center;
+    text-align: center;
+}
+
+
+.loan-data-table{
+    width: 400px;
+    height: 200px;
+    align-content: center;
+    position: relative;
+}
+
+.loan-form{
+    width : 100px;
+    height: 40px;
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.loan-form-data{
+    width : 170px;
+    height: 40px;
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+
 
 
 
