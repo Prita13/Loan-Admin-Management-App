@@ -1,34 +1,68 @@
-import React, { useState } from "react";
+import React,{useState} from "react";
+import '../CustomerData/CustomerData.css';
+import "/Users/shaurya/Desktop/Loan-Admin-Management-App/src/components/loginform.css";
 
 const LoanCardDetails = () => {
-  const [loanID, setLoanID] = useState("");
-  const [loanType, setLoanType] = useState("");
-  
+  const [loanType,setLoantype]=useState('');
+  const [duration,setDuration]=useState('');
+  const [loanid,setLoanid]=useState('');
+
+  const LoanDetailHandler=()=>{
+    // request stuff
+  }
+
   return (
     <div>
-      <div>
-        <h5>Loan Management Application</h5>
-        <h5>Loan Cards Master Data Details</h5>
+
+      <div className="customer-data-page">
+
+      <h3 id="customer-page-subheading"><u>Loan Management Application</u></h3>
+          <p id="customer-details-heading">Loan Card Master Data Deatils</p>
+          <p id="customer-details-heading"> ADD LOAN DATA</p>
         <div>
           <form>
-            <div>
-              <label>
-                Loan Id
-                <input type='text' value={loanID} name='loanid' onChange={(event)=>setLoanID(event.target.value)} />
-              </label>
-            </div>
-            <div>
-            <h5>Designation</h5>
-            <select value={loanType} onChange={(event)=>setLoanType(event.target.value)}>
-              <option value="" selected disabled hidden>Select Loan Type</option>
-              <option value='Furniture'>Furniture</option>
-              <option value='Stationery'>
-                Stationery
-              </option>
-              <option value='Crockery'>Crockery</option>
-            </select>
-            </div>
-            <button type='submit'>Add Data</button>
+            <table>
+              <tr>
+                <td>
+                  <div className="loan-form">
+                  Loan Id 
+                  </div>
+                </td>
+                <td>
+                  <input type='text' placeholder='Loan ID' value={loanid} onChange={(event)=>setLoanid(event.target.value)} />
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <div className="loan-form">
+                    Loan type
+                  </div>
+                </td>
+                <td>
+                  <select value={loanType} onChange={(event)=>setLoantype(event.target.value)}>
+                      <option value="" selected disabled hidden>Select Loan Type</option>
+                      <option value='Furniture'>Furniture</option>
+                      <option value='Car'>Car</option>
+                      <option value='Home'>Home</option>
+                    </select>
+                </td>
+              </tr>
+             
+              <tr>
+                <td>
+                  <div className="loan-form">
+                    Duration
+                  </div>
+                </td>
+                
+                <td>
+                  <input type="number" value={duration} onChange={(event)=>setDuration(event.target.value)}/>
+                </td>
+              </tr>
+
+            </table>
+  
+            <button className="customer-add-btn" type='submit' onClick={LoanDetailHandler}>Add Data</button>
           </form>
         </div>
       </div>

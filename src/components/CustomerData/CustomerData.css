@@ -1,55 +1,64 @@
-*{
-    margin: 0;
-    box-sizing: border-box;
-}
-
-.page{
-    height: 100vh;
-    width: 100%;
+.customer-data-page{
     display: flex;
-    justify-content: center;
+    justify-content:center ;
     align-items: center;
-}
-
-.cover{
-    background-color: beige;
-    width: 30em;
-    height: 35em;
-    position: relative;
-    border-radius: 1em;
-    box-shadow: 0 0.188em 1.550em rgb(156, 156, 156);
-    display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
+    padding-top: 60px;
 }
 
-input{
-    border: none;
-    background-color: rgb(229, 226, 226);
-    height:4em;
-    width: 80%;
-    border-radius: 0.25em;
+#customer-page-subheading{
     text-align: center;
-    padding: 2em;
+    font-size: 25px;
 }
 
-input:focus{
-    outline-color: rgb(32, 177, 255);
+#customer-details-heading{
+    text-align: center;
+    font-size: 20px;
+    padding: 20px;
 }
 
-.login-btn{
-    width:40%;
-    height: 3em;
-    background-color: rgb(32, 177, 255);
-    display: flex;
-    justify-content: center;
+.customer-data-table{
+    width: 800px;
+    height: 200px;
+}
+
+.customer-add-btn{
+    width: 200px;
     align-items: center;
-    transition: 0.5s;
-    border-radius: 0.25em;
-    cursor: pointer;
+    text-align: center;
 }
 
-.login-btn:hover{
-    transform: scale(1.25);
+
+.loan-data-table{
+    width: 400px;
+    height: 200px;
+    align-content: center;
+    position: relative;
 }
+
+.loan-form{
+    width : 100px;
+    height: 40px;
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.loan-form-data{
+    width : 170px;
+    height: 40px;
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+
+
+
+
+
+
+
+
+

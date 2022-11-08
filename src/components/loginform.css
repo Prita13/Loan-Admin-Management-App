@@ -24,7 +24,7 @@
     justify-content: space-around;
 }
 
-input{
+.login-input{
     border: none;
     background-color: rgb(229, 226, 226);
     height:4em;
