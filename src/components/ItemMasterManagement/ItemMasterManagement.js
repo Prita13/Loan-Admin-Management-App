@@ -1,4 +1,5 @@
 import React,{useState} from "react";
+import '../ItemMasterManagement/ItemMasterManagement.css';
 
 const ItemMasterManagement = () => {
   const [id, setId] = useState("");
@@ -23,18 +24,19 @@ const ItemMasterManagement = () => {
           <p id="customer-details-heading"> ADD ITEM DATA</p>
       <div>
         <form>
-          <table>
-            <tr>
+          <table className="item-table">
+            <tr className="item-data-row">
               <td>
-                <div className="loan-form">
-                  <h5>Item Id</h5>
+                <div className="item-name">
+                  <h4>Item Id</h4>
                 </div>
               </td>
 
 
               <td>
-                <div className="loan-form-data">
+                <div >
                 <input
+                  className="item-form-data"
                   type='text'
                   placeholder='Item ID'
                   value={id}
@@ -44,30 +46,32 @@ const ItemMasterManagement = () => {
               </td>
 
               <td>
-              <div className="loan-form">
-                <h5>Item Description</h5>
+              <div className="item-name">
+                <h4>Item Description</h4>
                 </div>
               </td>
               <td>
-              <div className="loan-form-data">
+              <div >
                 <input
+                  className="item-form-data"
                   type='text'
                   placeholder='Item Description'
                   value={description}
                   onChange={(event)=>setDescription(event.target.value)}
                 />
-                </div>
+              </div>
               </td>
             </tr>
-            <tr>
+            <tr className="item-data-row">
               <td>
-                <div className="loan-form">
-                  <h5>Item Value</h5>
+                <div className="item-name">
+                  <h4>Item Value</h4>
                 </div>
               </td>
               <td>
-                <div className="loan-form-data">
+                <div >
                   <input
+                  className="item-form-data"
                   type='text'
                   placeholder='Item Value'
                   value={itemValue}
@@ -76,13 +80,13 @@ const ItemMasterManagement = () => {
                 </div>
               </td>
               <td>
-                <div className="loan-form">
-                  <h5>Item Category</h5>
+                <div className="item-name">
+                  <h4>Item Category</h4>
                 </div>
               </td>
               <td>
-                <div className="loan-form-data">
-                  <select value={itemCategory} onChange={(event)=>setItemCategory(event.target.value)}>
+                <div>
+                  <select  className="item-form-data" value={itemCategory} onChange={(event)=>setItemCategory(event.target.value)}>
                   <option value="" selected disabled hidden>Select Item Category</option>
                   <option value='Furniture'>Furniture</option>
                   <option value='Personal'>Personal</option>
@@ -91,16 +95,16 @@ const ItemMasterManagement = () => {
 
               </td>
             </tr>
-            <tr>
+            <tr className="item-data-row">
 
             <td>
-             <div className="loan-form">
-              <h5>Issue Status</h5>
+             <div className="item-name">
+              <h4>Issue Status</h4>
               </div>
             </td>
             <td>
-              <div className="loan-form-data">
-              <select value={issueStatus} onChange={(event)=>setIssueStatus(event.target.value)}>
+              <div >
+              <select className="item-form-data" value={issueStatus} onChange={(event)=>setIssueStatus(event.target.value)}>
                 <option value="" selected disabled hidden>Select Issue Status</option>
                 <option value='Yes'>Yes</option>
                 <option value='No'>No</option>
@@ -109,13 +113,13 @@ const ItemMasterManagement = () => {
             </td>
               
             <td>
-             <div className="loan-form">
-              <h5>Item Make</h5>
+             <div className="item-name">
+              <h4>Item Make</h4>
               </div>
             </td>
             <td>
-              <div className="loan-form-data">
-              <select value={itemmake} onChange={(event)=>setItemmake(event.target.value)}>
+              <div >
+              <select className="item-form-data" value={itemmake} onChange={(event)=>setItemmake(event.target.value)}>
                 <option value="" selected disabled hidden>Select Item Make</option>
                 <option value='Wooden'>Wooden</option>
                 <option value='Plastic'>Plastic</option>
@@ -126,7 +130,7 @@ const ItemMasterManagement = () => {
 
             </tr>
           </table>
-         <button type='submit' onClick={handleClick}>Add Data</button>
+         <div className = "item-btn-submit" type='submit' onClick={handleClick}>Add Data</div>
         </form>
         </div>
 

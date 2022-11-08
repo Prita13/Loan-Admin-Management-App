@@ -1,0 +1,29 @@
+.item-table{
+    width: 800px;
+}
+
+.item-data-row{
+    height: 50px;
+}
+
+.item-form-data{
+    height: 35px;
+}
+
+.item-btn-submit{
+    width: 200px;
+    height: 3em;
+    margin-left: 316px;
+    margin-top: 30px;
+    background-color: rgb(32, 177, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    border-radius: 0.25em;
+    cursor: pointer;
+}
+
+.item-btn-submit:hover{
+    transform: scale(1.25);
+}

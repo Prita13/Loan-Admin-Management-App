@@ -24,33 +24,31 @@
 
 .customer-add-btn{
     width: 200px;
+    height: 3em;
+    margin-left: 300px;
+    margin-top: 50px;
+    background-color: rgb(32, 177, 255);
+    display: flex;
+    justify-content: center;
     align-items: center;
-    text-align: center;
+    transition: 0.5s;
+    border-radius: 0.25em;
+    cursor: pointer;
+}
+
+.customer-add-btn:hover{
+    transform: scale(1.25);
+}
+
+.data-row-entry-2{
+    height: 50px;
+}
+
+.customer-input{
+    height: 35px;
 }
 
 
-.loan-data-table{
-    width: 400px;
-    height: 200px;
-    align-content: center;
-    position: relative;
-}
-
-.loan-form{
-    width : 100px;
-    height: 40px;
-    padding: 10px;
-    text-align: center;
-    vertical-align: middle;
-}
-
-.loan-form-data{
-    width : 170px;
-    height: 40px;
-    padding: 10px;
-    text-align: center;
-    vertical-align: middle;
-}
 
 
 

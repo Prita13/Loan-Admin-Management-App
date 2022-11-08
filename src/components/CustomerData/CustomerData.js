@@ -26,19 +26,20 @@ const CustomerData = () => {
           <form>
             <table className="customer-data-table">
               <tr className="data-row">
-                <td className="data-row-entry"> <h5>Employee Id</h5> </td>
-                <td>
+                <td className="data-row-entry-1"> <h4>Employee Id</h4> </td>
+                <td className="data-row-entry-2">
                 <input
+                  className="customer-input"
                   type='text'
                   placeholder='Employee ID'
                   value={id}
                   onChange={(event)=>setId(event.target.value)}
                 />
                 </td>
-                <td><h5>Designation</h5></td>
-                <td>
+                <td><h4>Designation</h4></td>
+                <td className="data-row-entry-2">
                 <div className="selection-designation">
-                <select value={designation} onChange={(event)=>setDesignation(event.target.value)}>
+                <select className="customer-input" value={designation} onChange={(event)=>setDesignation(event.target.value)}>
                 <option value="" selected disabled hidden>Select Designation</option>
                 <option value='Manager'>Manager</option>
                 <option value='Senoir Software Engineer'>Senoir Software Engineer</option>
@@ -48,9 +49,10 @@ const CustomerData = () => {
                 </td>
               </tr>
               <tr>
-                <td><h5>Employee Name</h5></td>
-                <td>
+                <td><h4>Employee Name</h4></td>
+                <td className="data-row-entry-2">
                 <input
+                  className="customer-input"
                   type='text'
                   placeholder='Employee Name'
                   value={name}
@@ -58,12 +60,13 @@ const CustomerData = () => {
                 />
                 </td>
                 <td>
-                 <h5>
+                 <h4>
                  Date of Birth
-                  </h5> 
+                  </h4> 
                 </td>
-                <td>
+                <td className="data-row-entry-2">
                 <input
+                  className="customer-input"
                   type='date'
                   placeholder='DD/MM/YYYY'
                   onChange={(event)=>setdob(event.target.value)}
@@ -72,12 +75,12 @@ const CustomerData = () => {
               </tr>
             
               <tr>
-              <td><h5>Department
-                </h5></td>
+              <td><h4>Department
+                </h4></td>
 
-                <td>
+              <td className="data-row-entry-2">
               <div className="selection-department">
-              <select value={department} onChange={(event)=>setDepartment(event.target.value)}>
+              <select className="customer-input" value={department} onChange={(event)=>setDepartment(event.target.value)}>
               <option value="" selected disabled hidden>Select Department</option>
                 <option value='Finance'>Finance</option>
                 <option value='Sales'>Sales</option>
@@ -85,11 +88,12 @@ const CustomerData = () => {
               </select>
               </div>
               </td>
-              <td><h5> Date of Joining</h5>
+              <td><h4> Date of Joining</h4>
                   
                 </td>
-                <td>
+                <td className="data-row-entry-2">
                 <input
+                  className="customer-input"
                   type='date'
                   placeholder='DD/MM/YYYY'
                   onChange={(event)=>setdoj(event.target.value)}
@@ -97,9 +101,9 @@ const CustomerData = () => {
                 </td>
               </tr>
               <tr>
-                <td><h5>Gender</h5></td>
+                <td><h4>Gender</h4></td>
                 <td>
-                <select value={gender} onChange={(event)=>setGender(event.target.value)}>
+                <select className="customer-input" value={gender} onChange={(event)=>setGender(event.target.value)}>
                 <option value="" selected disabled hidden>Select Gender</option>
                   <option value='Male'>Male</option>
                   <option value='Female'>Female</option>
@@ -111,7 +115,7 @@ const CustomerData = () => {
                 
               
             </table>
-            <button className="customer-add-btn" type='submit' onClick={handleClick}>Add Data</button>
+            <div className="customer-add-btn" type='submit' onClick={handleClick}> Add Data </div>
           </form>
         </div>
       </div>
