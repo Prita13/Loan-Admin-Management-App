@@ -33,6 +33,11 @@ const AdminDashboard = () => {
             element={<CustomerData />}
           />
           <Route
+            path='/LoanCardManagement'
+            exact
+            element={<LoanCardDetails />}
+          />
+          <Route
             path='/ItemsMasterData'
             exact
             element={<ItemMasterManagement />}
