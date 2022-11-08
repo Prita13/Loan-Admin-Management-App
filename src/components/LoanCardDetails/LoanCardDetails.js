@@ -1,6 +1,6 @@
 import React,{useState} from "react";
 import '../CustomerData/CustomerData.css';
-import "/Users/shaurya/Desktop/Loan-Admin-Management-App/src/components/loginform.css";
+import "../loginform.css";
 
 const LoanCardDetails = () => {
   const [loanType,setLoantype]=useState('');
