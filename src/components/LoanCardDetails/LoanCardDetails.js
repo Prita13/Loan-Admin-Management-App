@@ -1,6 +1,14 @@
-import React from "react";
+import React,{useState} from "react";
 
 const LoanCardDetails = () => {
+  const [loanType,setLoantype]=useState('');
+  const [duration,setDuration]=useState('');
+  const [loanid,setLoanid]=useState('');
+
+  const LoanDetailHandler=()=>{
+    // request stuff
+  }
+
   return (
     <div>
       <div>
@@ -11,10 +19,34 @@ const LoanCardDetails = () => {
             <div>
               <label>
                 Loan Id
-                <input type='text' name='loanid' />
+                <input type='text' placeholder='Loan ID' value={loanid} onChange={(event)=>setLoanid(event.target.value)} />
               </label>
             </div>
-            <button type='submit'>Add Data</button>
+            <div>
+              <label>
+                Loan type
+                <select value={loanType} onChange={(event)=>setLoantype(event.target.value)}>
+                  <option value='Furniture'>Furniture</option>
+                  <option value='Car'>Car</option>
+                  <option value='Home'>Home</option>
+                </select>
+              </label>
+            </div>
+            <div>
+              <label>
+                Duration
+                <select value={duration} onChange={(event)=>setDuration(event.target.value)}>
+                  <option value='1'>1</option>
+                  <option value='2'>2</option>
+                  <option value='3'>3</option>
+                  <option value='5'>5</option>
+                  <option value='7'>7</option>
+                  <option value='10'>10</option>
+                  <option value='15'>15</option>
+                </select>
+              </label>
+            </div>
+            <button type='submit' onClick={LoanDetailHandler}>Add Data</button>
           </form>
         </div>
       </div>
