@@ -2,13 +2,40 @@ import React, { useState } from "react";
 import axios from "axios";
 import "../LoanCardDetails/LoanCardDetails.css";
 import "../loginform.css";
+import { useNavigate } from "react-router-dom";
 
 const LoanCardDetails = () => {
   const [loanType, setLoantype] = useState("");
   const [duration, setDuration] = useState("");
   const [loanid, setLoanid] = useState("");
 
+  const navigate = useNavigate();
+
   const LoanDetailHandler = () => {
+
+    const loan_obj={
+      loanId:loanid,
+      loanType:loanType,
+      durationInYears:duration,
+    }
+
+    fetch('http://localhost:8080/loanCard/addLoanCard', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify( loan_obj )
+            })
+            
+            .then(response => response.json())
+            .then(response =>{
+              console.log(response)
+              navigate("/displayLoan")
+              
+                
+            }
+            )
     axios
       .post(`http://localhost:8080/loanCard/addLoanCard`, {
         loanId: loanid,
@@ -93,7 +120,8 @@ const LoanCardDetails = () => {
               className='loan-add-btn'
               type='submit'
               onClick={LoanDetailHandler}>
-              Add Data
+                {" "}
+              Add Data{" "}
             </div>
           </form>
         </div>

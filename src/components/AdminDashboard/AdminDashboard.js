@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import CustomerData from "../CustomerData/CustomerData";
 import ItemMasterManagement from "../ItemMasterManagement/ItemMasterManagement";
 import LoanCardDetails from "../LoanCardDetails/LoanCardDetails";
+import DisplayLoanCardDetails from '../LoanCardDetails/DisplayLoanCardDetails';
 import DisplayCustomerDetails from '../CustomerData/DisplayCutomerDetails';
 import { NavLink, Routes, Route } from "react-router-dom";
 import "../AdminDashboard/AdminDashboard.css";
@@ -48,6 +49,11 @@ const AdminDashboard = () => {
             path='/display'
             exact
             element={<DisplayCustomerDetails />}
+            />
+          <Route
+            path='/displayLoan'
+            exact
+            element={<DisplayLoanCardDetails />}
             />
         </Routes>
       </div>
