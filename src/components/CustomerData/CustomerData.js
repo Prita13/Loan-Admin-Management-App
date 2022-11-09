@@ -13,7 +13,7 @@ const CustomerData = () => {
 
   const handleClick = () => {
     axios
-      .post(`https://localhost:8080/employee/addEmployee`, {
+      .post(`http://localhost:8080/employee/addEmployee`, {
         employeeId: id,
         employeeName: name,
         designation: designation,
@@ -23,7 +23,7 @@ const CustomerData = () => {
         dateOfJoining: doj,
       })
       .then((response) => {
-        console.log("Employee added");
+        alert("Employee added");
       })
       .catch((error) => {
         alert("Couldn't Add Employee");

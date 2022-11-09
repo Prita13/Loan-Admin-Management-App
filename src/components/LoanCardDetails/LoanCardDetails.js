@@ -16,7 +16,7 @@ const LoanCardDetails = () => {
         durationInYears: duration,
       })
       .then((response) => {
-        console.log("Loan Card added");
+        alert("Loan Card added");
       })
       .catch((error) => {
         alert("Couldn't Add Loan Card");

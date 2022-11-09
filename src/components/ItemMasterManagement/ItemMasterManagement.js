@@ -21,7 +21,7 @@ const ItemMasterManagement = () => {
         itemDescription: description,
       })
       .then((response) => {
-        console.log("Item added");
+        alert("Item added");
       })
       .catch((error) => {
         alert("Couldn't Add Item");
