@@ -1,13 +1,25 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
+import axios from "axios";
 
 const LoanCardDetails = () => {
-  const [loanType,setLoantype]=useState('');
-  const [duration,setDuration]=useState('');
-  const [loanid,setLoanid]=useState('');
+  const [loanType, setLoantype] = useState("");
+  const [duration, setDuration] = useState("");
+  const [loanid, setLoanid] = useState("");
 
-  const LoanDetailHandler=()=>{
-    // request stuff
-  }
+  const LoanDetailHandler = () => {
+    axios
+      .post(`http://localhost:8080/loanCard/addLoanCard`, {
+        loanId: loanid,
+        loanType: loanType,
+        durationInYears: duration,
+      })
+      .then((response) => {
+        console.log("Loan Card added");
+      })
+      .catch((error) => {
+        alert("Couldn't Add Loan Card");
+      });
+  };
 
   return (
     <div>
@@ -19,13 +31,20 @@ const LoanCardDetails = () => {
             <div>
               <label>
                 Loan Id
-                <input type='text' placeholder='Loan ID' value={loanid} onChange={(event)=>setLoanid(event.target.value)} />
+                <input
+                  type='text'
+                  placeholder='Loan ID'
+                  value={loanid}
+                  onChange={(event) => setLoanid(event.target.value)}
+                />
               </label>
             </div>
             <div>
               <label>
                 Loan type
-                <select value={loanType} onChange={(event)=>setLoantype(event.target.value)}>
+                <select
+                  value={loanType}
+                  onChange={(event) => setLoantype(event.target.value)}>
                   <option value='Furniture'>Furniture</option>
                   <option value='Car'>Car</option>
                   <option value='Home'>Home</option>
@@ -35,7 +54,9 @@ const LoanCardDetails = () => {
             <div>
               <label>
                 Duration
-                <select value={duration} onChange={(event)=>setDuration(event.target.value)}>
+                <select
+                  value={duration}
+                  onChange={(event) => setDuration(event.target.value)}>
                   <option value='1'>1</option>
                   <option value='2'>2</option>
                   <option value='3'>3</option>
@@ -46,7 +67,9 @@ const LoanCardDetails = () => {
                 </select>
               </label>
             </div>
-            <button type='submit' onClick={LoanDetailHandler}>Add Data</button>
+            <button type='submit' onClick={LoanDetailHandler}>
+              Add Data
+            </button>
           </form>
         </div>
       </div>
