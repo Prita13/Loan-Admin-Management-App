@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import axios from "axios";
 import CustomerData from "../CustomerData/CustomerData";
 import ItemMasterManagement from "../ItemMasterManagement/ItemMasterManagement";
 import LoanCardDetails from "../LoanCardDetails/LoanCardDetails";
@@ -7,8 +8,19 @@ import DisplayCustomerDetails from '../CustomerData/DisplayCutomerDetails';
 import ItemMasterDetails from '../ItemMasterManagement/ItemMasterDetails';
 import { NavLink, Routes, Route } from "react-router-dom";
 import "../AdminDashboard/AdminDashboard.css";
+import { useNavigate } from "react-router-dom";
+import LoginForm from "../loginform";
 
 const AdminDashboard = () => {
+  const navigate = useNavigate();
+
+  const logout = (e) => {
+      e.preventDefault();
+      navigate("/admin");
+    
+  };
+
+
   return (
     <div>
       <div>
@@ -16,6 +28,7 @@ const AdminDashboard = () => {
           <div id="main-heading">Loan Management Application</div>
         </NavLink>
         <div id="page-heading">Admin Dash Board</div>
+        <div onclick={logout} id="logout-btn">Logout</div>
       </div>
       <div className="options">
         <NavLink to='/CustomerDataManagement' style={{textDecoration:'none'}}>
@@ -61,6 +74,10 @@ const AdminDashboard = () => {
             exact
             element={<ItemMasterDetails />}
             />
+          <Route
+            path='/admin'
+            exact
+            element={<LoginForm/>}/>
         </Routes>
       </div>
     </div>

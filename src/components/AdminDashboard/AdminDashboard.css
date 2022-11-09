@@ -75,3 +75,23 @@
 .option-3:hover{
     transform: scale(1.25);
 }
+
+#logout-btn{
+    cursor: pointer;
+    position: relative;
+    float: right;
+    background-color: grey;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    border-radius: 5px;
+    top: -151px;
+}
+
+#logout-btn:hover{
+    color: white;
+    background-color: grey;
+    opacity: 0.8;
+}
