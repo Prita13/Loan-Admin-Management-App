@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../CustomerData/CustomerData.css";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const CustomerData = () => {
   const [id, setId] = useState("");
@@ -11,7 +12,36 @@ const CustomerData = () => {
   const [department, setDepartment] = useState("");
   const [gender, setGender] = useState("");
 
+  const navigate = useNavigate();
+
   const handleClick = () => {
+
+    const obj={
+      employeeId: id,
+		employeeName: name,
+		designation: designation,
+		department: department,
+		gender: gender,
+		dateOfBirth: dob,
+		dateOfJoining: doj
+  }
+  fetch('http://localhost:8080/employee/addEmployee', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify( obj )
+            })
+            .then(response => response.json())
+            .then(response =>{
+              console.log(response)
+              navigate("/display")
+              
+                
+            }
+            )
+    
     axios
       .post(`http://localhost:8080/employee/addEmployee`, {
         employeeId: id,
