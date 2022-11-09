@@ -1,0 +1,55 @@
+.loan-data-table{
+    width: 800px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.loan-form{
+    width : 100px;
+    height: 40px;
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.loan-form-data{
+    width : 170px;
+    height: 40px;
+    padding: 10px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.loan-data-input{
+    width: 172px;
+    height: 35px;
+}
+
+.loan-input-common{
+    height: 35px;
+}
+
+.loan-data-row{
+    height: 50px;
+}
+
+.loan-add-btn{
+    width: 200px;
+    height: 3em;
+    margin-left: 316px;
+    
+    background-color: rgb(32, 177, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+    border-radius: 0.25em;
+    cursor: pointer;
+}
+
+.loan-add-btn:hover{
+    transform: scale(1.25);
+}
