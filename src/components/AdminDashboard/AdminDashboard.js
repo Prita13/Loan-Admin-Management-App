@@ -4,6 +4,7 @@ import ItemMasterManagement from "../ItemMasterManagement/ItemMasterManagement";
 import LoanCardDetails from "../LoanCardDetails/LoanCardDetails";
 import DisplayLoanCardDetails from '../LoanCardDetails/DisplayLoanCardDetails';
 import DisplayCustomerDetails from '../CustomerData/DisplayCutomerDetails';
+import ItemMasterDetails from '../ItemMasterManagement/ItemMasterDetails';
 import { NavLink, Routes, Route } from "react-router-dom";
 import "../AdminDashboard/AdminDashboard.css";
 
@@ -54,6 +55,11 @@ const AdminDashboard = () => {
             path='/displayLoan'
             exact
             element={<DisplayLoanCardDetails />}
+            />
+          <Route
+            path='/displayItem'
+            exact
+            element={<ItemMasterDetails />}
             />
         </Routes>
       </div>

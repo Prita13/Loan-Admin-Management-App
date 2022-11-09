@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "../ItemMasterManagement/ItemMasterManagement.css";
+import { useNavigate } from "react-router-dom";
 
 const ItemMasterManagement = () => {
   const [id, setId] = useState("");
@@ -10,7 +11,35 @@ const ItemMasterManagement = () => {
   const [issueStatus, setIssueStatus] = useState("");
   const [itemmake, setItemmake] = useState("");
 
+  const navigate = useNavigate();
+
   const handleClick = () => {
+
+    const item_obj = {
+      itemId: id,
+      itemMake: itemmake,
+      itemCategory:itemCategory,
+      itemValuation:itemValue,
+      issueStatus:issueStatus,
+      itemDescription: description,
+    }
+
+    fetch('http://localhost:8080/item/addItem', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify( item_obj )
+            })
+            .then(response => response.json())
+            .then(response =>{
+              console.log(response)
+              navigate("/displayItem")
+              
+                
+            }
+            )
     axios
       .post(`http://localhost:8080/item/addItem`, {
         itemId: id,
