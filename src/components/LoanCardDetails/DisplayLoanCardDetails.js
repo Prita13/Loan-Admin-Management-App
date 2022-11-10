@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import  '../LoanCardDetails/DisplayLoanCardDetails.css';
+import axios from 'axios';
 
 
 export default function DisplayLoanCardDetails() {

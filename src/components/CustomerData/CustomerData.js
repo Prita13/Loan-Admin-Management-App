@@ -15,7 +15,7 @@ const CustomerData = () => {
   const navigate = useNavigate();
 
   const viewData=()=>{
-    navigate("/displayItem");
+    navigate("/display");
   }
 
   const handleClick = () => {

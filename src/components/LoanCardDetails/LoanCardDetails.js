@@ -12,7 +12,7 @@ const LoanCardDetails = () => {
   const navigate = useNavigate();
 
   const viewData=()=>{
-    navigate("/displayItem");
+    navigate("/displayLoan");
   }
 
   const LoanDetailHandler = () => {
