@@ -14,6 +14,24 @@ export default function DisplayLoanCardDetails() {
     })
 
   },[])
+
+  const deleteHandler=(id)=>{
+    axios
+    .post(`http://localhost:8080/loanCard/deleteLoanCard/${id}`, {})
+    .then((response) => {
+      fetch('http://localhost:8080/loanCard/getAllLoanCards', {
+      }).then(response=>response.json())
+      .then(response=>{
+        console.log(response) 
+        setdetail(response)  
+      })
+      alert("Loan Card deleted");
+    })
+    .catch((error) => {
+      alert("Couldn't Delete Loan Card");
+    });
+  }
+
     return (
         <div>
             
@@ -41,7 +59,7 @@ export default function DisplayLoanCardDetails() {
           <td>{details.durationInYears}</td>
           
           <td>Edit</td>
-          <td>Delete</td>
+          <td onClick={()=>{deleteHandler(details.loanId)}}>Delete</td>
         </tr>
 
     )

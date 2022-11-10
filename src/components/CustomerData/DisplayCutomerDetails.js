@@ -13,19 +13,25 @@ export default function DisplayCustomerDetails() {
        console.log(response) 
        setdetail(response)  
     })
-
-    const deleteHandler=(id)=>{
-      axios
-      .post(`http://localhost:8080/employee/deleteEmployee/${id}`, {})
-      .then((response) => {
-        alert("Employee deleted");
-      })
-      .catch((error) => {
-        alert("Couldn't Delete Employee");
-      });
-    }
-
   },[])
+
+  const deleteHandler=(id)=>{
+    axios
+    .post(`http://localhost:8080/employee/deleteEmployee/${id}`, {})
+    .then((response) => {
+      fetch('http://localhost:8080/employee/getAllEmployees', {
+      }).then(response=>response.json())
+      .then(response=>{
+        console.log(response) 
+        setdetail(response)  
+      })
+      alert("Employee deleted");
+    })
+    .catch((error) => {
+      alert("Couldn't Delete Employee");
+    });
+  }
+
     return (
         <div>
             
@@ -59,7 +65,7 @@ export default function DisplayCustomerDetails() {
           <td>{details.dateOfBirth}</td>
           <td>{details.dateOfJoining}</td>
           <td>Edit</td>
-          <td onClick={()=>deleteHandler(details.employeeId)}>Delete</td>
+          <td onClick={()=>{deleteHandler(details.employeeId)}}>Delete</td>
         </tr>
 
     )

@@ -14,6 +14,24 @@ export default function DisplayItemMasterDetails() {
     })
 
   },[])
+
+  const deleteHandler=(id)=>{
+    axios
+    .post(`http://localhost:8080/item/deleteItem/${id}`, {})
+    .then((response) => {
+      fetch('http://localhost:8080/item/getAllItems', {
+      }).then(response=>response.json())
+      .then(response=>{
+        console.log(response) 
+        setdetail(response)  
+      })
+      alert("Item deleted");
+    })
+    .catch((error) => {
+      alert("Couldn't Delete Item");
+    });
+  }
+
     return (
         <div>
             
@@ -46,7 +64,7 @@ export default function DisplayItemMasterDetails() {
           <td>{details.itemDescription}</td>
           
           <td>Edit</td>
-          <td>Delete</td>
+          <td onClick={()=>{deleteHandler(details.itemId)}}>Delete</td>
         </tr>
 
     )

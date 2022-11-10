@@ -11,6 +11,10 @@ const LoanCardDetails = () => {
 
   const navigate = useNavigate();
 
+  const viewData=()=>{
+    navigate("/displayItem");
+  }
+
   const LoanDetailHandler = () => {
 
     const loan_obj={
@@ -36,18 +40,18 @@ const LoanCardDetails = () => {
                 
             }
             )
-    axios
-      .post(`http://localhost:8080/loanCard/addLoanCard`, {
-        loanId: loanid,
-        loanType: loanType,
-        durationInYears: duration,
-      })
-      .then((response) => {
-        alert("Loan Card added");
-      })
-      .catch((error) => {
-        alert("Couldn't Add Loan Card");
-      });
+    // axios
+    //   .post(`http://localhost:8080/loanCard/addLoanCard`, {
+    //     loanId: loanid,
+    //     loanType: loanType,
+    //     durationInYears: duration,
+    //   })
+    //   .then((response) => {
+    //     alert("Loan Card added");
+    //   })
+    //   .catch((error) => {
+    //     alert("Couldn't Add Loan Card");
+    //   });
   };
 
   return (
@@ -122,6 +126,11 @@ const LoanCardDetails = () => {
               onClick={LoanDetailHandler}>
                 {" "}
               Add Data{" "}
+            </div>
+            <div
+              className='loan-add-btn'
+              onClick={viewData}>
+              View Loan Card
             </div>
           </form>
         </div>

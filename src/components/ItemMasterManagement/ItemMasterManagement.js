@@ -13,6 +13,10 @@ const ItemMasterManagement = () => {
 
   const navigate = useNavigate();
 
+  const viewData=()=>{
+    navigate("/displayItem");
+  }
+
   const handleClick = () => {
 
     const item_obj = {
@@ -40,21 +44,21 @@ const ItemMasterManagement = () => {
                 
             }
             )
-    axios
-      .post(`http://localhost:8080/item/addItem`, {
-        itemId: id,
-        itemMake: itemmake,
-        itemCategory: itemCategory,
-        itemValuation: itemValue,
-        issueStatus: issueStatus,
-        itemDescription: description,
-      })
-      .then((response) => {
-        alert("Item added");
-      })
-      .catch((error) => {
-        alert("Couldn't Add Item");
-      });
+    // axios
+    //   .post(`http://localhost:8080/item/addItem`, {
+    //     itemId: id,
+    //     itemMake: itemmake,
+    //     itemCategory: itemCategory,
+    //     itemValuation: itemValue,
+    //     issueStatus: issueStatus,
+    //     itemDescription: description,
+    //   })
+    //   .then((response) => {
+    //     alert("Item added");
+    //   })
+    //   .catch((error) => {
+    //     alert("Couldn't Add Item");
+    //   });
   };
 
   return (
@@ -188,6 +192,11 @@ const ItemMasterManagement = () => {
               type='submit'
               onClick={handleClick}>
               Add Data
+            </div>
+            <div
+              className='item-btn-submit'
+              onClick={viewData}>
+              View Items
             </div>
           </form>
         </div>

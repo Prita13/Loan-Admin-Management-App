@@ -14,6 +14,10 @@ const CustomerData = () => {
 
   const navigate = useNavigate();
 
+  const viewData=()=>{
+    navigate("/displayItem");
+  }
+
   const handleClick = () => {
     const obj = {
       employeeId: id,
@@ -38,22 +42,22 @@ const CustomerData = () => {
         navigate("/display");
       });
 
-    axios
-      .post(`http://localhost:8080/employee/addEmployee`, {
-        employeeId: id,
-        employeeName: name,
-        designation: designation,
-        gender: gender,
-        department: department,
-        dateOfBirth: dob,
-        dateOfJoining: doj,
-      })
-      .then((response) => {
-        alert("Employee added");
-      })
-      .catch((error) => {
-        alert("Couldn't Add Employee");
-      });
+    // axios
+    //   .post(`http://localhost:8080/employee/addEmployee`, {
+    //     employeeId: id,
+    //     employeeName: name,
+    //     designation: designation,
+    //     gender: gender,
+    //     department: department,
+    //     dateOfBirth: dob,
+    //     dateOfJoining: doj,
+    //   })
+    //   .then((response) => {
+    //     alert("Employee added");
+    //   })
+    //   .catch((error) => {
+    //     alert("Couldn't Add Employee");
+    //   });
   };
 
   return (
@@ -190,6 +194,11 @@ const CustomerData = () => {
               onClick={handleClick}>
               {" "}
               Add Data{" "}
+            </div>
+            <div
+              className='customer-add-btn'
+              onClick={viewData}>
+              View Customer
             </div>
           </form>
         </div>
