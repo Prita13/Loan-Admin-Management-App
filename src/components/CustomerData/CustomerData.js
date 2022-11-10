@@ -15,33 +15,29 @@ const CustomerData = () => {
   const navigate = useNavigate();
 
   const handleClick = () => {
-
-    const obj={
+    const obj = {
       employeeId: id,
-		employeeName: name,
-		designation: designation,
-		department: department,
-		gender: gender,
-		dateOfBirth: dob,
-		dateOfJoining: doj
-  }
-  fetch('http://localhost:8080/employee/addEmployee', {
-            method: 'POST',
-            headers: {
-                'Accept': 'application/json',
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify( obj )
-            })
-            .then(response => response.json())
-            .then(response =>{
-              console.log(response)
-              navigate("/display")
-              
-                
-            }
-            )
-    
+      employeeName: name,
+      designation: designation,
+      department: department,
+      gender: gender,
+      dateOfBirth: dob,
+      dateOfJoining: doj,
+    };
+    fetch("http://localhost:8080/employee/addEmployee", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(obj),
+    })
+      .then((response) => response.json())
+      .then((response) => {
+        console.log(response);
+        navigate("/display");
+      });
+
     axios
       .post(`http://localhost:8080/employee/addEmployee`, {
         employeeId: id,

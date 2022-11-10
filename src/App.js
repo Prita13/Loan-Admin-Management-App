@@ -15,7 +15,7 @@ function App() {
       ) : (
         <Router>
           <div className='dashboard-page'>
-            <AdminDashboard />
+            <AdminDashboard setIsLoggedIn={setIsLoggedIn} />
           </div>
         </Router>
       )}
