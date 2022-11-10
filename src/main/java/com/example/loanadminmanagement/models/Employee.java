@@ -37,6 +37,34 @@ public class Employee {
         return department;
     }
 
+    public void setEmployeeId(Long employeeId) {
+        this.employeeId = employeeId;
+    }
+
+    public void setEmployeeName(String employeeName) {
+        this.employeeName = employeeName;
+    }
+
+    public void setDesignation(String designation) {
+        this.designation = designation;
+    }
+
+    public void setDepartment(String department) {
+        this.department = department;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public void setDateOfBirth(Date dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public void setDateOfJoining(Date dateOfJoining) {
+        this.dateOfJoining = dateOfJoining;
+    }
+
     public String getGender() {
         return gender;
     }

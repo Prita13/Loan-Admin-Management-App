@@ -41,4 +41,28 @@ public class Item {
     public String getItemMake() {
         return itemMake;
     }
+
+    public void setItemId(String itemId) {
+        this.itemId = itemId;
+    }
+
+    public void setItemDescription(String itemDescription) {
+        this.itemDescription = itemDescription;
+    }
+
+    public void setIssueStatus(String issueStatus) {
+        this.issueStatus = issueStatus;
+    }
+
+    public void setItemValuation(Integer itemValuation) {
+        this.itemValuation = itemValuation;
+    }
+
+    public void setItemCategory(String itemCategory) {
+        this.itemCategory = itemCategory;
+    }
+
+    public void setItemMake(String itemMake) {
+        this.itemMake = itemMake;
+    }
 }

@@ -27,4 +27,16 @@ public class LoanCard {
     }
 
     Integer durationInYears;
+
+    public void setLoanId(String loanId) {
+        this.loanId = loanId;
+    }
+
+    public void setLoanType(String loanType) {
+        this.loanType = loanType;
+    }
+
+    public void setDurationInYears(Integer durationInYears) {
+        this.durationInYears = durationInYears;
+    }
 }
