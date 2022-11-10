@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import  '../CustomerData/DisplayCustomerDetails.css';
+import axios from 'axios';
 
 
 export default function DisplayCustomerDetails() {
@@ -12,6 +13,17 @@ export default function DisplayCustomerDetails() {
        console.log(response) 
        setdetail(response)  
     })
+
+    const deleteHandler=(id)=>{
+      axios
+      .post(`http://localhost:8080/employee/deleteEmployee/${id}`, {})
+      .then((response) => {
+        alert("Employee deleted");
+      })
+      .catch((error) => {
+        alert("Couldn't Delete Employee");
+      });
+    }
 
   },[])
     return (
@@ -47,7 +59,7 @@ export default function DisplayCustomerDetails() {
           <td>{details.dateOfBirth}</td>
           <td>{details.dateOfJoining}</td>
           <td>Edit</td>
-          <td>Delete</td>
+          <td onClick={()=>deleteHandler(details.employeeId)}>Delete</td>
         </tr>
 
     )
